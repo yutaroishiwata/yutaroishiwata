@@ -25,15 +25,22 @@ jobs:
         python -m pip install --upgrade pip t
         pip install -r requirements.txt
         
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_DEBUG: false
+        envkey_DUOLINGO_ID: "yutaroishiwata"
+        envkey_DUOLINGO_PW: ${{ secrets.DUOLINGO_PW }}
+          
     - name: Run main.py
       run: |
         python main.py
         
     - name: Commit and Push
       run: |
-          git config user.name "yutaroishiwata"
-          git config user.email "yutaro.ishiwata@gmail.com"
-          git add .
-          git commit -m "refresh data"
-          git pull
-          git push origin main
+        git config user.name "yutaroishiwata"
+        git config user.email "yutaro.ishiwata@gmail.com"
+        git add .
+        git commit -m "refresh data"
+        git pull
+        git push origin main
