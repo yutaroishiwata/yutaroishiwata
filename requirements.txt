@@ -1,0 +1,2 @@
+duolingo-api==0.5.4
+python-dotenv==0.18.0
