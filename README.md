@@ -2,7 +2,7 @@
 
 - 🔭 I’m currently working on somethig cool!
 - 🌱 I’m loving TypeScript / Next.js / Tailwind CSS
-- 🦜 My Duolingo streak is at 356 days now!
+- 🦜 My Duolingo streak is at 357 days now!
 - 🥖 I bake bread on Saturday mornings
 - 🏃 I'm an runner, and I've done 342.2K so far
 
