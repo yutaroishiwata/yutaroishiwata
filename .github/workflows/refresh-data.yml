@@ -34,6 +34,7 @@ jobs:
           
     - name: Run main.py
       run: |
+        pyton nike_sync.py ${{ secrets.NIKE_REFRESH_TOKEN }}
         python main.py
         
     - name: Commit and Push
