@@ -46,6 +46,6 @@ jobs:
         then
           git add .
           git commit -m "refresh README.md"
-          git pull
+          git config pull.rebase false
           git push origin main
         fi
