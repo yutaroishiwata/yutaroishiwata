@@ -1,4 +1,5 @@
 import duolingo
+import inspect
 import os
 from dotenv import load_dotenv
 import glob
@@ -17,7 +18,12 @@ for file in glob.glob('activities/*.json'):
                 total_dis += summary['value']
 
 # Fetch 'Duolingo' streak number
-lingo = duolingo.Duolingo(os.environ['DUOLINGO_ID'], os.environ['DUOLINGO_PW'])
+source = inspect.getsource(duolingo)
+new_source = source.replace('jwt=None', 'jwt')
+new_source = source.replace('self.jwt = None', ' ')
+exec(new_source, duolingo.__dict__)
+
+lingo = duolingo.Duolingo(username = os.environ['DUOLINGO_USERNAME'], jwt = os.environ['DUOLINGO_JWT'])
 data = lingo.get_streak_info()
 streak_num = data.get('site_streak')
 
