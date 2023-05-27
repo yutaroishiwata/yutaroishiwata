@@ -30,7 +30,7 @@ jobs:
       uses: SpicyPizza/create-envfile@v1
       with:
         envkey_DEBUG: false
-        envkey_DUOLINGO_ID: "yutaroishiwata"
+        envkey_DUOLINGO_ID: "yutaro"
         envkey_DUOLINGO_PW: ${{ secrets.DUOLINGO_PW }}
           
     - name: Run main.py
