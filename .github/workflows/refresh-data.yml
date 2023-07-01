@@ -35,6 +35,7 @@ jobs:
           
     - name: Run main.py
       run: |
+        python pippa_endtrip_force.py ${{ secrets.PIPPA_ACCESS_TOKEN }}
         python nike_sync.py ${{ secrets.NIKE_REFRESH_TOKEN }}
         python main.py
         
