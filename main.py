@@ -26,7 +26,6 @@ def get_duolingo_streak(DUOLINGO_USERNAME, DUOLINGO_JWT):
 
 # Parse 'Nike Run Club' activity log
 def parse_nrc_activity():
-    total_dis = 0.0
     for file in glob.glob('activities/*.json'):
         with open(file, 'r') as f:
             json_data = json.loads(f.read())
