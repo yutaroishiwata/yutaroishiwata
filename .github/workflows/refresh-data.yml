@@ -29,7 +29,7 @@ jobs:
     - name: Run main.py
       run: |
         python pippa_endtrip_force.py ${{ secrets.PIPPA_ACCESS_TOKEN }} ${{ secrets.IFTTT_WEBHOOKS_KEY }}
-        python nike_sync.py ${{ secrets.NIKE_REFRESH_TOKEN }}
+        # python nike_sync.py ${{ secrets.NIKE_REFRESH_TOKEN }}
         python main.py ${{ vars.DUOLINGO_USERNAME }} ${{ secrets.DUOLINGO_JWT }}
         
     - name: Commit and Push
