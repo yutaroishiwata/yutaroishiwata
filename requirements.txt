@@ -2,5 +2,6 @@ httpx==0.18.2
 Requests==2.31.0
 pandas==2.1.0
 duolingo-api==0.5.4
+numpy==1.25.0
 
 timezonefinder; platform_system == "Windows"
