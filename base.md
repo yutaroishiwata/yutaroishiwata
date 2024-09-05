@@ -3,8 +3,8 @@
 - 🔭 I’m currently working on somethig cool!
 - 🌱 I’m loving TypeScript / Next.js / Tailwind CSS
 - 🦜 My Duolingo streak is now STREAK-NUM days!
-- 🥖 I bake bread on Saturday mornings
-- 🏃🏻 I'm a runner and have run TOTAL-DISK so far!
+- 🥖 I bake bread on weekend mornings
+- 🏃🏻 I've run TOTAL-DISK so far this month!
 
 
 <!--

@@ -1,8 +1,9 @@
 import argparse
 import duolingo
 import inspect
-import glob
-import json
+import pandas as pd
+from datetime import datetime
+from pathlib import Path
 
 # Update data from base.md to README.md
 def update_reademe(streak_num, total_dis):
@@ -24,17 +25,16 @@ def get_duolingo_streak(DUOLINGO_USERNAME, DUOLINGO_JWT):
     streak_num = data.get('site_streak')
     return streak_num
 
-# Parse 'Nike Run Club' activity log
-def parse_nrc_activity():
-    total_dis = 0.0
-    for file in glob.glob('activities/*.json'):
-        with open(file, 'r') as f:
-            json_data = json.loads(f.read())
-            summaries = json_data['summaries']
-            for summary in summaries:
-                if summary['metric'] == 'distance':
-                    total_dis += summary['value']
-    return total_dis
+# Parse 'Strava' activity log
+def parse_strava_data():
+    csv_path = Path('data', 'strava_activity_data.csv')
+    df = pd.read_csv(csv_path)
+    df['start_date'] = pd.to_datetime(df['start_date'])
+    current_year = datetime.now().year
+    current_month = datetime.now().month
+    current_month_data = df[(df['start_date'].dt.year == current_year) & (df['start_date'].dt.month == current_month)]
+    total_distance = current_month_data['distance'].sum()
+    return total_distance
 
 
 if __name__ == "__main__":
@@ -43,5 +43,5 @@ if __name__ == "__main__":
     parser.add_argument("duolingo_jwt", help = "API access token for Duolingo")
     options = parser.parse_args()
     streak_num = get_duolingo_streak(options.duolingo_username, options.duolingo_jwt)
-    total_dis = parse_nrc_activity()
+    total_dis = parse_strava_data()
     update_reademe(streak_num, total_dis)
