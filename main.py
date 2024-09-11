@@ -34,7 +34,8 @@ def parse_strava_data():
     current_month = datetime.now().month
     current_month_data = df[(df['start_date'].dt.year == current_year) & (df['start_date'].dt.month == current_month)]
     total_distance = current_month_data['distance'].sum()
-    return total_distance
+    total_distance_rounded = round(total_distance / 1000, 2)
+    return total_distance_rounded
 
 
 if __name__ == "__main__":
