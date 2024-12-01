@@ -4,7 +4,7 @@
 - 🌱 I’m loving TypeScript / Next.js / Tailwind CSS
 - 🦜 My Duolingo streak is now 50 days!
 - 🥖 I bake bread on weekend mornings
-- 🏃🏻 I've run 2.2 km so far this month!
+- 🏃🏻 I've run 0.0 km so far this month!
 
 
 <!--
